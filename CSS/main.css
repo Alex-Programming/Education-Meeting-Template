@@ -338,6 +338,9 @@
     .home video {
         min-width: 100%;
         min-height: 100vh;
+        max-width: 100%;
+        max-height: 100vh;
+        object-fit: cover;
     }
     .home .video::before {
         content: "";
