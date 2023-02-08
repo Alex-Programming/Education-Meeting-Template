@@ -1,0 +1,470 @@
+/* Start Home Section */
+@media (min-width: 0) {
+    .home-section {
+        background: url(../images/heading-bg.jpg) center/cover;
+        min-height: 450px;
+        position: relative;
+        margin-top: -80px;
+    }
+    .home-section .text {
+        display: grid;
+        gap: 20px;
+        color: white;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding-inline: 15px;
+    }
+    .home-section p {
+        font-weight: 600;
+        font-size: 17px;
+    }
+    .home-section h2 {
+        font-size: 37px;
+    }
+}
+@media (max-width: 450px) {
+    .home-section .text {
+        transform: translate(-50%, -25%);
+    }
+}
+/* End Home Section */
+/* Start Meetings */
+@media (min-width: 0) {
+    .meetings {
+        background: url(../images/meetings-page-bg.jpg) fixed center/cover;
+        padding-block: 0;
+        overflow: hidden;
+    }
+    .meetings .container {
+        border-top: none;
+        padding-top: 0;
+        display: block;
+        padding-block: 250px var(--paddSection);
+        max-width: 1250px;
+    }
+    .meetings input {
+        display: none;
+    }
+    .meetings .labels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        position: relative;
+        top: -70px;
+    }
+    .meetings .labels label {
+        background-color: white;
+        text-transform: uppercase;
+        color: var(--mainColor-3);
+        font-weight: 600;
+        padding: 14px 30px;
+        border-radius: 25px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: var(--mainTransition);
+    }
+    .meetings .labels label:hover,
+    .meetings input[id=all]:checked ~ .labels label[for=all],
+    .meetings input[id=soon]:checked ~ .labels label[for=soon],
+    .meetings input[id=important]:checked ~ .labels label[for=important],
+    .meetings input[id=attractive]:checked ~ .labels label[for=attractive] {
+        background-color: var(--mainColor-3);
+        color: white;
+    }
+    .meetings .upcoming-meetings {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, calc((100% - 40px) / 3));
+    }
+    .meetings .upcoming-meetings .box {
+        transition-property: transform, opacity;
+        transition-duration: 450ms, 250ms;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings,
+    .meetings input[id=important]:checked ~ .upcoming-meetings,
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings {
+        margin-bottom: -365px;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box,
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box,
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box {
+        transform: translate(0, 0) scale(0);
+        opacity: 0;
+    }
+    /* Input Id=soon Effect */
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(1) {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(3) {
+        transform: translateX(calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(8) {
+        transform: translate(calc(100% + 20px), calc(-200% - 40px));
+        opacity: 1;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(9) {
+        transform: translate(calc(-200% - 40px), calc(-100% - 20px));
+        opacity: 1;
+    }
+    /* Input Id=important Effect */
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(2) {
+        transform: translateX(calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(6) {
+        transform: translate(calc(-100% - 20px), calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(7) {
+        transform: translate(calc(200% + 40px), calc(-200% - 40px));
+        opacity: 1;
+    }
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(8) {
+        transform: translate(calc(-100% - 20px), calc(-100% - 20px));
+        opacity: 1;
+    }
+    /* Input Id=attractive Effect */
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(4) {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(5) {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(7) {
+        transform: translate(calc(200% + 40px), calc(-200% - 40px));
+        opacity: 1;
+    }
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(9) {
+        transform: translate(calc(-200% - 40px), calc(-100% - 20px));
+        opacity: 1;
+    }
+    /* Number-Page */
+    .meetings .number-page {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        margin-top: 70px;
+    }
+    .meetings .number-page a {
+        width: 45px;
+        height: 45px;
+        background-color: white;
+        display: grid;
+        place-content: center;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        transition-property: color, background-color;
+        transition-duration: var(--mainTransition);
+    }
+    .meetings .number-page li:first-child a {
+        background-color: var(--mainColor-3);
+        color: white;
+    }
+    .meetings .number-page a:hover {
+        background-color: var(--mainColor-3);
+        color: white;
+    }
+}
+@media (max-width: 991px) {
+    .meetings .upcoming-meetings {
+        grid-template-columns: repeat(2, calc((100% - 20px) / 2));
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings,
+    .meetings input[id=important]:checked ~ .upcoming-meetings,
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings {
+        margin-bottom: -1075px;
+    }
+    /* Input Id=soon Effect */
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(1) {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(3) {
+        transform: translate(calc(100% + 20px), calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(8) {
+        transform: translate(calc(-100% - 20px), calc(-200% - 40px));
+        opacity: 1;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(9) {
+        transform: translate(calc(100% + 20px), calc(-300% - 60px));
+        opacity: 1;
+    }
+    /* Input Id=important Effect */
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(2) {
+        transform: translateX(calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(6) {
+        transform: translateY(calc(-200% - 40px));
+        opacity: 1;
+    }
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(7) {
+        transform: translate(calc(100% + 20px), calc(-200% - 40px));
+        opacity: 1;
+    }
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(8) {
+        transform: translate(calc(-100% - 20px), calc(-200% - 40px));
+        opacity: 1;
+    }
+    /* Input Id=attractive Effect */
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(4) {
+        transform: translate(calc(-100% - 20px), calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(5) {
+        transform: translate(calc(100% + 20px), calc(-200% - 40px));
+        opacity: 1;
+    }
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(7) {
+        transform: translateY(calc(-200% - 40px));
+        opacity: 1;
+    }
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(9) {
+        transform: translate(calc(100% + 20px), calc(-300% - 60px));
+        opacity: 1;
+    }
+}
+@media (max-width: 767px) {
+    .meetings .upcoming-meetings {
+        grid-template-columns: 1fr;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings,
+    .meetings input[id=important]:checked ~ .upcoming-meetings,
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings {
+        margin-bottom: -2140px;
+    }
+    /* Input Id=soon Effect */
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(1) {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(3) {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(8),
+    .meetings input[id=soon]:checked ~ .upcoming-meetings .box:nth-child(9) {
+        transform: translateY(calc(-500% - 100px));
+        opacity: 1;
+    }
+    /* Input Id=important Effect */
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(2) {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 1;
+    }
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(6),
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(7),
+    .meetings input[id=important]:checked ~ .upcoming-meetings .box:nth-child(8) {
+        transform: translateY(calc(-400% - 80px));
+        opacity: 1;
+    }
+    /* Input Id=attractive Effect */
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(4),
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(5) {
+        transform: translateY(calc(-300% - 60px));
+        opacity: 1;
+    }
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(7) {
+        transform: translateY(calc(-400% - 80px));
+        opacity: 1;
+    }
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings .box:nth-child(9) {
+        transform: translateY(calc(-500% - 100px));
+        opacity: 1;
+    }
+}
+@media (max-width: 550px) {
+    .meetings .container {
+        width: 400px;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings,
+    .meetings input[id=important]:checked ~ .upcoming-meetings,
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings {
+        margin-bottom: -1850px;
+    }
+}
+@media (max-width: 450px) {
+    .meetings .container {
+        width: 320px;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings,
+    .meetings input[id=important]:checked ~ .upcoming-meetings,
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings {
+        margin-bottom: -2086px;
+    }
+}
+@media (max-width: 359px) {
+    .meetings .container {
+        width: 280px;
+    }
+    .meetings input[id=soon]:checked ~ .upcoming-meetings,
+    .meetings input[id=important]:checked ~ .upcoming-meetings,
+    .meetings input[id=attractive]:checked ~ .upcoming-meetings {
+        margin-bottom: -1970px;
+    }
+}
+/* End Meetings */
+/* Start Meeting Page */
+@media (min-width: 0) {
+    .meeting-page {
+        background: url(../images/meetings-page-bg.jpg) fixed center/cover;
+    }
+    .meeting-page .container {
+        padding-block: var(--paddSection);
+    }
+    .meeting-page .image {
+        display: grid;
+        position: relative;
+    }
+    .meeting-page .image img {
+        width: 100%;
+        border-start-start-radius: 10px;
+        border-start-end-radius: 10px;
+    }
+    .meeting-page .image .price,
+    .meeting-page .image .nov {
+        position: absolute;
+        color: var(--mainColor-2);
+        background-color: #eee;
+        top: 20px;
+        left: 20px;
+        padding: 10px 13px;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+    .meeting-page .image .nov {
+        left: auto;
+        right: 20px;
+        padding: 15px 25px;
+        display: grid;
+        justify-items: center;
+        gap: 5px;
+    }
+    .meeting-page .image .nov span:first-child {
+        text-transform: uppercase;
+        font-size: 13px;
+        color: var(--mainColor-3);
+        font-weight: 700;
+    }
+    .meeting-page .image .nov span:last-child {
+        font-size: 22px;
+    }
+    .meeting-page .content {
+        background-color: white;
+        padding: 40px;
+        border-end-start-radius: 10px;
+        border-end-end-radius: 10px;
+    }
+    .meeting-page .content h2 {
+        font-weight: 600;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .meeting-page .content p {
+        font-size: 15px;
+        color: var(--mainColor-6);
+        line-height: var(--l-height);
+    }
+    .meeting-page .content > p:nth-of-type(2) {
+        padding-block: 40px;
+        margin-block: 40px;
+        border-block: 1px solid #eee;
+    }
+    .meeting-page .content p a {
+        color: var(--mainColor-5);
+        transition: color var(--mainTransition);
+    }
+    .meeting-page .content p a:hover {
+        color: var(--mainColor-1);
+    }
+    .meeting-page .box {
+        display: flex;
+        gap: 20px 80px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 40px;
+    }
+    .meeting-page .box > div {
+        display: grid;
+    }
+    .meeting-page .box h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+    .meeting-page .box p,
+    .meeting-page .box span {
+        font-size: 14px;
+        line-height: var(--l-height);
+    }
+    .meeting-page .share {
+        padding-top: 40px;
+        display: flex;
+    }
+    .meeting-page .share h3 {
+        font-size: 18px;
+    }
+    .meeting-page .share ul {
+        display: flex;
+        align-items: center;
+    }
+    .meeting-page .share li {
+        margin-left: 10px;
+    }
+    .meeting-page .share li a {
+        color: var(--mainColor-6);
+        font-size: 14px;
+        transition: color var(--mainTransition);
+    }
+    .meeting-page .share li a:hover {
+        color: var(--mainColor-1);
+    }
+    .meeting-page .container > .link {
+        margin: 40px auto 0;
+        padding: 14px 50px;
+    }
+}
+@media (max-width: 991px) {
+    .meeting-page .box {
+        flex-direction: column;
+    }
+}
+@media (max-width: 767px) {
+    .meeting-page .image .price,
+    .meeting-page .image .nov {
+        top: 10px;
+        left: 10px;
+    }
+    .meeting-page .image .nov {
+        left: auto;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 13px;
+    }
+    .meeting-page .image .nov span:last-child {
+        font-size: 18px;
+    }
+    .meeting-page .share {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .meeting-page .share ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+}
+/* End Meeting Page */
