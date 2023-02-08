@@ -165,6 +165,7 @@
         font-size: 18px;
         transition-property: color, background-color;
         transition-duration: var(--mainTransition);
+        color: var(--mainColor-6);
     }
     .meetings .number-page li:first-child a {
         background-color: var(--mainColor-3);
