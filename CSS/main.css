@@ -78,7 +78,7 @@
     /* Scrollbar */
     ::-webkit-scrollbar {
         background-color: #1f272b;
-        width: 16px;
+        width: 15px;
     }
     ::-webkit-scrollbar-thumb {
         background-color: rgb(161 44 47 / 90%);
@@ -178,13 +178,14 @@
         text-transform: uppercase;
     }
     header menu li label,
-    header menu li a {
+    header menu > li > a {
         color: white;
         cursor: pointer;
         transition: var(--mainTransition);
-        font-weight: 500;
+        font-weight: 600;
         display: block;
         padding-block: 10px;
+        font-size: 15px;
     }
     header menu .pages:hover label,
     header menu li a:hover {
@@ -226,9 +227,10 @@
         color: #2a2a2a;
         display: block;
         padding: 14px 20px;
-    }
-    header menu .pages li:first-child a {
-        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        font-weight: 600;
+        transition: var(--mainTransition);
+        border-top: 1px solid #eee;
         font-weight: 400;
     }
     header menu .pages a:hover {
@@ -270,7 +272,7 @@
         flex-wrap: wrap;
         background-color: white;
     }
-    header nav menu li {
+    header nav menu > li {
         border-top: 1px solid #eee;
     }
     header menu li label,
@@ -278,6 +280,9 @@
     header menu .pages a {
         padding: 16px 0 !important;
         color: var(--mainColor-2);
+    }
+    header menu .pages a {
+        font-weight: 500;
     }
     header menu .pages i {
         color: var(--mainColor-2);
