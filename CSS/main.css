@@ -78,7 +78,7 @@
     /* Scrollbar */
     ::-webkit-scrollbar {
         background-color: #1f272b;
-        width: 17px;
+        width: 16px;
     }
     ::-webkit-scrollbar-thumb {
         background-color: rgb(161 44 47 / 90%);
